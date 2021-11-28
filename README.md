@@ -18,3 +18,11 @@ docker-compose up -d
 ### Connect from pgadmin
 
 http://localhost:5050/
+
+
+### Get Container IP Address to connect
+
+```docker
+docker ps
+docker inspect <CONTAINER_ID>
+```
