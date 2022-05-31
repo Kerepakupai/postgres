@@ -2,20 +2,22 @@ version: "3.8"
 
 services: 
   postgres-db:
-    image: 'postgres:latest'
+    image: 'postgres:14'
     restart: always
     volumes:
       - './postgres_data:/var/lib/postgresql/data'
-    environment: 
-      POSTGRES_PASSWORD: kerepakupai82
+    environment:
+      - POSTGRES_DB=test
+      - POSTGRES_PASSWORD=david
+      - POSTGRES_USER=david
     ports: 
       - '5432:5432'
   pgadmin:
     image: 'dpage/pgadmin4'
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: root
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=root
     ports:
       - "5050:80"
     depends_on: 
