@@ -19,7 +19,6 @@ docker-compose up -d
 
 http://localhost:5050/
 
-
 ### Get Container IP Address to connect
 
 ```docker
